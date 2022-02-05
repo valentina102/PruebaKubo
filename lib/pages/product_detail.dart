@@ -47,12 +47,15 @@ class ProductDetail extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                producto?.nombre ?? '',
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
+                              Container(
+                                width: MediaQuery.of(context).size.width*0.7,
+                                child: Text(
+                                  producto?.nombre ?? '',
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                      fontSize: 20, fontWeight: FontWeight.bold),
+                                ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(right: 10),
@@ -117,7 +120,7 @@ class ProductDetail extends StatelessWidget {
                         ),
                         SizedBox(height: 10),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 85),
+                          padding: const EdgeInsets.symmetric(horizontal: 55),
                           child: ElevatedButton(
                               style: ButtonStyle(
                                   backgroundColor:
@@ -129,10 +132,14 @@ class ProductDetail extends StatelessWidget {
                                       color: Colors.white),
                                   Padding(
                                     padding: const EdgeInsets.all(15),
-                                    child: Text('Añadir al carrito',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white)),
+                                    child: Container(
+                                      width: MediaQuery.of(context).size.width*0.3,
+                                      child: Text('Añadir al carrito',
+                                          maxLines: 2,
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white)),
+                                    ),
                                   )
                                 ],
                               )),
